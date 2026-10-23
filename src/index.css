@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Bebas+Neue&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Auto-restored theme variables */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 182 72% 24%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 182 72% 30%;
+    --shadow-x: 0px;
+    --shadow-y: 1px;
+    --shadow-blur: 4px;
+    --shadow-spread: 0px;
+    --shadow-opacity: 0.2;
+    --shadow-color: #000000;
+    --shadow-2xs: 0 1px 1px rgb(10 40 45 / 0.04);
+    --shadow-xs: 0 1px 2px rgb(10 40 45 / 0.05);
+    --shadow-sm: 0 2px 6px rgb(10 40 45 / 0.06);
+    --shadow-md: 0 8px 24px rgb(10 40 45 / 0.08);
+    --shadow-xl: 0 24px 60px rgb(10 40 45 / 0.12);
+    --shadow-2xl: 0 40px 100px rgb(10 40 45 / 0.18);
+    --shadow: 0 4px 12px rgb(10 40 45 / 0.07);
+
+    --background: 0 0% 100%;
+    --foreground: 225 14% 8%;
+    --card: 220 14% 97%;
+    --card-foreground: 225 14% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 14% 8%;
+    --primary: 168 76% 32%;
+    --verified: 204 88% 50%;
+    --verified-community: 38 92% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 12% 94%;
+    --secondary-foreground: 225 14% 10%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 225 6% 44%;
+    --accent: 14 88% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 89%;
+    --input: 220 10% 87%;
+    --ring: 168 76% 32%;
+    --radius: 1rem;
+    --chart-1: 168 76% 32%;
+    --chart-2: 14 88% 60%;
+    --chart-3: 45 90% 55%;
+    --chart-4: 200 70% 50%;
+    --chart-5: 225 6% 44%;
+    --font-sans: 'Geist', -apple-system, system-ui, sans-serif;
+    --font-mono: 'Geist Mono', ui-monospace, monospace;
+    --font-serif: 'Geist', system-ui, sans-serif;
+    --shadow-lg: 0 30px 80px -30px rgb(15 20 30 / 0.25), 0 0 0 1px rgb(15 20 30 / 0.06);
+    --glass-bg: 0 0% 100%;
+    --glass-highlight: 0 0% 100%;
+  }
+  .dark {
+    --sidebar-background: 225 12% 6%;
+    --sidebar-foreground: 40 10% 78%;
+    --sidebar-primary: 166 72% 64%;
+    --sidebar-primary-foreground: 225 14% 6%;
+    --sidebar-accent: 225 9% 12%;
+    --sidebar-accent-foreground: 40 18% 95%;
+    --sidebar-border: 225 8% 15%;
+    --sidebar-ring: 166 72% 64%;
+    --background: 225 14% 4%;
+    --foreground: 40 18% 95%;
+    --card: 225 12% 7%;
+    --card-foreground: 40 18% 95%;
+    --popover: 225 12% 8%;
+    --popover-foreground: 40 18% 95%;
+    --primary: 166 72% 64%;
+    --verified: 204 90% 58%;
+    --verified-community: 40 95% 56%;
+    --primary-foreground: 200 30% 6%;
+    --secondary: 225 9% 13%;
+    --secondary-foreground: 40 18% 92%;
+    --muted: 225 9% 11%;
+    --muted-foreground: 225 6% 58%;
+    --accent: 14 92% 67%;
+    --accent-foreground: 225 14% 6%;
+    --border: 225 8% 15%;
+    --input: 225 8% 17%;
+    --ring: 166 72% 64%;
+    --chart-1: 166 72% 64%;
+    --chart-2: 14 92% 67%;
+    --chart-3: 45 90% 65%;
+    --chart-4: 200 70% 60%;
+    --chart-5: 225 6% 58%;
+    --shadow-lg: 0 40px 120px -30px rgb(0 0 0 / 0.8), 0 0 0 1px hsl(0 0% 100% / 0.06);
+    --glass-bg: 225 12% 9%;
+    --glass-highlight: 0 0% 100%;
+  }
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    transition: background-color .4s, color .4s;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: 'ss01', 'cv11';
+    letter-spacing: -0.011em;
+  }
+  ::selection { background: hsl(var(--primary) / 0.3); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .serif { font-family: var(--font-serif); letter-spacing: -0.01em; }
+  .display { letter-spacing: -0.045em; line-height: 1.02; font-weight: 600; }
+  .glass {
+    background: hsl(var(--glass-bg) / 0.9);
+    border: 1px solid hsl(var(--border) / 0.6);
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+    box-shadow: var(--shadow-lg), inset 0 1px 0 hsl(var(--glass-highlight) / 0.06);
+  }
+  html { scroll-padding-top: 88px; }
+  .section-y { @apply py-20 sm:py-28 lg:py-40; }
+  .eyebrow { @apply text-lg font-semibold tracking-tight text-primary; }
+  .focus-ring { @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background; }
+}
+
+/* Personal preferences */
+.compact [id^="msg-"].mt-4 { margin-top: 0.5rem; }
+.compact [id^="msg-"] p.rounded-\[20px\] { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.reduce-motion *, .reduce-motion *::before, .reduce-motion *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+.spoiler { filter: blur(5px); cursor: pointer; transition: filter .2s; border-radius: 4px; background: hsl(var(--foreground) / 0.15); }
+.spoiler.revealed { filter: none; background: transparent; }
+@keyframes burst { 0% { transform: translate(0,0) scale(.6); opacity: 1 } 100% { transform: translate(var(--x), var(--y)) scale(1.2) rotate(var(--r)); opacity: 0 } }
+
+/* Personal preferences */
+.high-contrast { --muted-foreground: 0 0% 25%; --border: 0 0% 45%; --input: 0 0% 40%; }
+.dark.high-contrast { --muted-foreground: 0 0% 82%; --border: 0 0% 60%; --input: 0 0% 65%; }
+.bubble-square [id^="msg-"] p.rounded-\[20px\] { border-radius: 8px; }
+.blur-media [id^="msg-"] img { filter: blur(18px); transition: filter .2s; }
+.blur-media [id^="msg-"] img:hover { filter: none; }
+/* Community bubble styles */
+.cbubble-square [id^="msg-"] p.rounded-\[20px\] { border-radius: 6px; }
+.cbubble-minimal [id^="msg-"] p.rounded-\[20px\] { border-radius: 0; background: transparent !important; color: hsl(var(--foreground)) !important; padding-left: 0.25rem; padding-right: 0.25rem; }
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+.story-md, .story-md * { color: inherit !important; font-family: inherit !important; }
+.story-md p, .story-md ul, .story-md blockquote, .story-md h1, .story-md h2, .story-md h3 { margin: 0.25em 0 !important; }
+.story-md h1, .story-md h2, .story-md h3 { font-size: 1.35em !important; line-height: 1.15 !important; }
+.story-md mark { background: rgb(253 224 71 / .85) !important; color: #111 !important; padding: 0 .15em; border-radius: .2em; }

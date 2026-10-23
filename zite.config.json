@@ -1,0 +1,15 @@
+{
+  "id": "6icyrxg8dk",
+  "accessMode": "external",
+  "envVars": {
+    "ZITE_BOT_API_URL": {
+      "description": "The public Bot API URL shown in the /developers docs"
+    },
+    "ZITE_GIPHY_API_KEY": {
+      "description": "GIPHY API key used by the GIF picker in the chat composer"
+    },
+    "ZITE_SUPPORT_STAFF_EMAILS": {
+      "description": "Comma-separated list of emails allowed into the /support mod panel"
+    }
+  }
+}
